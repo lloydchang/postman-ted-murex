@@ -1,0 +1,347 @@
+{
+	"info": {
+		"_postman_id": "32b9fb45-cdc7-4dad-af3e-29306ac1e178",
+		"name": "https://ted-murex.vercel.app/",
+		"description": "investors\n\ngrantInfo\n\ngetGrantProposal\n\n### 3\\. Funding Phase\n\n- **Funding Discovery**: Leveraging LLMs and targeted internet searches to connect projects with potential funding sources.\n    \n- **Simplified Matching**: Streamlining the process of identifying potential grant providers or impact investors tailored to the non-profit’s mission and goals.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Getinvestors",
+			"id": "e3c8b391-f30a-43d1-8577-28aced49ba55",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Non-Profit Investor Search\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"goals\": [\n            \"Reduce carbon footprint\",\n            \"Promote sustainable farming\",\n            \"Educate youth on climate action\"\n        ],\n        \"targetMarket\": {\n            \"ageGroups\": [\"18-35\", \"35-50\"],\n            \"industries\": [\"Agriculture\", \"Energy\", \"Education\"]\n        },\n        \"geography\": {\n            \"regions\": [\"North America\", \"Europe\", \"Africa\"],\n            \"focusAreas\": [\"Rural areas\", \"Urban centers\"]\n        },\n        \"keyPrograms\": [\n            \"Tree plantation drives\",\n            \"Renewable energy workshops\",\n            \"Eco-friendly product giveaways\"\n        ],\n        \"missionStatement\": \"Our mission is to foster eco-conscious communities that actively participate in environmental sustainability and climate resilience.\",\n        \"mission\": \"Green Earth Initiative aims to mitigate the effects of climate change through innovative environmental programs.\",\n        \"primaryProduct\": \"Educational programs and eco-friendly products to promote sustainability.\",\n        \"sdgs\": [\"13: Climate Action\", \"7: Affordable and Clean Energy\", \"12: Responsible Consumption and Production\"]\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/investors"
+			},
+			"response": [
+				{
+					"id": "c54f4a48-2523-4a7d-af9f-471615b39c6b",
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Non-Profit Investor Search\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"goals\": [\n            \"Reduce carbon footprint\",\n            \"Promote sustainable farming\",\n            \"Educate youth on climate action\"\n        ],\n        \"targetMarket\": {\n            \"ageGroups\": [\"18-35\", \"35-50\"],\n            \"industries\": [\"Agriculture\", \"Energy\", \"Education\"]\n        },\n        \"geography\": {\n            \"regions\": [\"North America\", \"Europe\", \"Africa\"],\n            \"focusAreas\": [\"Rural areas\", \"Urban centers\"]\n        },\n        \"keyPrograms\": [\n            \"Tree plantation drives\",\n            \"Renewable energy workshops\",\n            \"Eco-friendly product giveaways\"\n        ],\n        \"missionStatement\": \"Our mission is to foster eco-conscious communities that actively participate in environmental sustainability and climate resilience.\",\n        \"mission\": \"Green Earth Initiative aims to mitigate the effects of climate change through innovative environmental programs.\",\n        \"primaryProduct\": \"Educational programs and eco-friendly products to promote sustainability.\",\n        \"sdgs\": [\"13: Climate Action\", \"7: Affordable and Clean Energy\", \"12: Responsible Consumption and Production\"]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/investors"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{}"
+				},
+				{
+					"id": "daf0bbd7-dd9e-4e0d-9177-b8431c4c8a3c",
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idea\": {\n    \"name\": \"<string>\",\n    \"mission\": \"<string>\",\n    \"goals\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"targetMarket\": \"<object>\",\n    \"primaryProduct\": \"<string>\",\n    \"sdgs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/investors"
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Getgrantinfo",
+			"id": "5f733872-9432-4c15-98bf-737237e15363",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Non-Profit Grant Search\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"mission\": \"To promote sustainable living through education and green technology adoption.\",\n        \"goals\": [\n            \"Reduce carbon emissions\",\n            \"Increase adoption of renewable energy\",\n            \"Educate youth on environmental conservation\"\n        ],\n        \"targetMarket\": {\n            \"ageGroups\": [\"18-25\", \"26-45\"],\n            \"industries\": [\"Energy\", \"Education\"]\n        },\n        \"primaryProduct\": \"Educational programs and green technology solutions.\",\n        \"sdgs\": [\"7: Affordable and Clean Energy\", \"13: Climate Action\"]\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/grantInfo"
+			},
+			"response": [
+				{
+					"id": "cc890bf0-aad7-4abf-b53a-d3f9930ce4e0",
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Non-Profit Grant Search\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"mission\": \"To promote sustainable living through education and green technology adoption.\",\n        \"goals\": [\n            \"Reduce carbon emissions\",\n            \"Increase adoption of renewable energy\",\n            \"Educate youth on environmental conservation\"\n        ],\n        \"targetMarket\": {\n            \"ageGroups\": [\"18-25\", \"26-45\"],\n            \"industries\": [\"Energy\", \"Education\"]\n        },\n        \"primaryProduct\": \"Educational programs and green technology solutions.\",\n        \"sdgs\": [\"7: Affordable and Clean Energy\", \"13: Climate Action\"]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/grantInfo"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{}"
+				},
+				{
+					"id": "fda5d40c-d000-4f4f-ac7d-3de4eac6c4c0",
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idea\": {\n    \"name\": \"<string>\",\n    \"mission\": \"<string>\",\n    \"goals\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"targetMarket\": \"<object>\",\n    \"primaryProduct\": \"<string>\",\n    \"sdgs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/grantInfo"
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Getgrantproposal",
+			"id": "68abd01a-1e5f-412d-8d85-727fa3bd30e7",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Grant Proposal Generation\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"mission\": \"Empowering communities through sustainable farming and eco-friendly practices.\",\n        \"goals\": [\n            \"Introduce urban farming practices\",\n            \"Increase community participation in recycling programs\"\n        ],\n        \"targetMarket\": {\n            \"regions\": [\"Asia\", \"Africa\"],\n            \"focusGroups\": [\"Low-income communities\", \"Small businesses\"]\n        },\n        \"primaryProduct\": \"Workshops and consulting on sustainable practices.\",\n        \"sdgs\": [\"2: Zero Hunger\", \"12: Responsible Consumption and Production\"]\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{baseUrl}}/getGrantProposal"
+			},
+			"response": [
+				{
+					"id": "9b640947-3086-48da-9664-602518529fa2",
+					"name": "Successful Response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Grant Proposal Generation\",\n    \"idea\": {\n        \"name\": \"Green Earth Initiative\",\n        \"mission\": \"Empowering communities through sustainable farming and eco-friendly practices.\",\n        \"goals\": [\n            \"Introduce urban farming practices\",\n            \"Increase community participation in recycling programs\"\n        ],\n        \"targetMarket\": {\n            \"regions\": [\"Asia\", \"Africa\"],\n            \"focusGroups\": [\"Low-income communities\", \"Small businesses\"]\n        },\n        \"primaryProduct\": \"Workshops and consulting on sustainable practices.\",\n        \"sdgs\": [\"2: Zero Hunger\", \"12: Responsible Consumption and Production\"]\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/getGrantProposal"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{}"
+				},
+				{
+					"id": "78b13d2c-77d0-48ad-a173-6042b906d326",
+					"name": "Validation Error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idea\": {\n    \"name\": \"<string>\",\n    \"mission\": \"<string>\",\n    \"goals\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"targetMarket\": \"<object>\",\n    \"primaryProduct\": \"<string>\",\n    \"sdgs\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{baseUrl}}/getGrantProposal"
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    },\n    {\n      \"loc\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"msg\": \"<string>\",\n      \"type\": \"<string>\"\n    }\n  ]\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "750d7ccc-9460-4cb3-b197-9f5034b4fbb6",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8aa05720-2955-4dee-93c2-b273ae7facab",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://ted-murex.vercel.app",
+			"type": "string"
+		}
+	]
+}
